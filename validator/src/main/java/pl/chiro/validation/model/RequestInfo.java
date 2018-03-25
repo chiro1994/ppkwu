@@ -1,5 +1,7 @@
 package pl.chiro.validation.model;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.Email;
 
 import pl.chiro.validation.validators.ValidNip;
@@ -10,10 +12,11 @@ import pl.chiro.validation.validators.ValidRegon;
 public class RequestInfo {
 
 	@Email
+	@NotNull
 	private String email;
 	
 	@ValidNip
-	private String nip;//email nip pesel regon kod
+	private String nip;
 	
 	@ValidPesel
 	private String pesel;
